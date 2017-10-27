@@ -33,4 +33,23 @@ func PublicInvokefunction() {
 	var z int
 	z = functionWithInputAndReturnValue(a)
 	fmt.Println("Z ", z)
+
+	varArgs(1, 2, 3, 4, 5, 6, 7, 8, 9, 8, 7, 6, 5, 4, 3, 2, 1)
+
+	closure()
+}
+
+func varArgs(a ...int) {
+	for _, x := range a {
+		fmt.Println("varArgs x:", x)
+	}
+}
+
+func closure() {
+
+	add := func(a, b int) (c int) {
+		c = a + b
+		return
+	}
+	fmt.Println(add(1, 2))
 }
